@@ -3,7 +3,7 @@
     "tasks": [
         {
             "label": "pub-build",
-            "command":"dotnet",
+            "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
@@ -27,7 +27,7 @@
         },
         {
             "label": "sub-build",
-            "command":"dotnet",
+            "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
@@ -48,6 +48,6 @@
             "componentsPath": "dapr/components",
             "config": "dapr/config.yaml",
             "metricsPort": 32022
-        },
+        }
     ]
 }
