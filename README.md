@@ -14,7 +14,8 @@ Bunun için;
 
 docker exec -it bbt-redis redis-cli
 
-XADD "orders" *  "data" "{\"orderId\":3}"  #Dapr subscriber bu mesajı base64 olarak dönmektedir
+XADD "orders" *  "data" "{\"orderId\":3}"  #Dapr subscriber bu mesajı base64 olarak dönmektedir.
+
 XADD "orders" *  "data1" "{\"orderId\":3}"  # Ancak data dışında hehangi bir key olduğunda boş string dönmektedir.
 
 ##Zebee Redis Exporter aşağıdaki formatta mesaj yazmaktadır.
