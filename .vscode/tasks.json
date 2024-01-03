@@ -1,0 +1,53 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "pub-build",
+            "command":"dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/pub/pub.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "appId": "pub",
+            "dependsOn": "pub-build",
+            "appPort": 3201,
+            "httpPort": 32010,
+            "grpcPort": 32011,
+            "label": "dapr-debug-pub",
+            "type": "daprd",
+            "componentsPath": "dapr/components",
+            "config": "dapr/config.yaml",
+            "metricsPort": 32012
+        },
+        {
+            "label": "sub-build",
+            "command":"dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/sub/sub.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "appId": "sub",
+            "dependsOn": "sub-build",
+            "appPort": 3202,
+            "httpPort": 32020,
+            "grpcPort": 32021,
+            "label": "dapr-debug-sub",
+            "type": "daprd",
+            "componentsPath": "dapr/components",
+            "config": "dapr/config.yaml",
+            "metricsPort": 32022
+        },
+    ]
+}
