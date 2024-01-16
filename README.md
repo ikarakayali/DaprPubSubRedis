@@ -6,8 +6,10 @@ ancak veriye ulaşılamadığını göstermek amacıyla oluşturulmuştur.
 
 1-) "sub" projesi çalıştırılarak subscriber aktif edilir.
 (VS Code ile debug edilebilir)
+
 2-) "pub" projes ile dapr tarafından üretilen veri streame yazılabilir.
 Bu durumda dapr verinin önüne "data" keyini eklemektedir.
+
 3-) "pub" yerien direk redis cli ile ilgili streame data yazılıp subscriber'ın mesajı nasıl handle ettiği gözlenebilir.
 Bunun için; 
 
